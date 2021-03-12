@@ -4,15 +4,15 @@ module.exports = class stallmanCopypasta extends Plugin {
         powercord.api.commands.registerCommand({
             command: 'stallman',
             description: 'Prints the stallman copypasta to current channel.',
-            usage: '{c} [-s] <Replacement for Linux>',
+            usage: '{c} [-bot] <Replacement for Linux>',
             executor: async (message) => {
                 let default_word = "Linux";
                 let send = false;
-                if (message[0] == "-s") {
+                if (message[0] == "-bot") {
                     message.shift();
-                    send = true;
                     if (message[0] != undefined) default_word = message[0];
                 } else {
+                    send = true;
                     if (message[0] != undefined) default_word = message[0];
                 }
 
